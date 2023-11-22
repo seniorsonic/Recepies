@@ -1,0 +1,200 @@
+@import "nullstyle.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+body {
+    font-size: 18px;
+    font-family: "Montserrat";
+    font-weight: 500;
+    background: rgba(218, 193, 0, 0.398);
+}
+.header {
+    background: rgb(238, 255, 0, 0.5);
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    &__logo {
+        width: 75px;
+    }
+    &__contant {
+        font-size: 45px;
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+    &__contant .navigation__contant-text {
+        transition: all 0.3s;
+    }
+    &__contant .navigation__contant-text:hover {
+        transform: scale(1.2);
+    }
+    &__contant a {
+        color: black;
+    }
+    &__mane {
+        color: black;
+        transition: all 0.3s;
+    }
+    &__mane:hover {
+        transform: scale(1.2);
+    }
+    &__login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        width: 120px;
+        height: 40px;
+        border-radius: 15px;
+        background: #ff9a32;
+        border: 1px solid rgb(88, 62, 13);
+        opacity: 0.7;
+        transition: all 0.3s;
+    }
+    &__login:hover {
+        opacity: 1;
+        border: 1px solid #ff9a32;
+    }
+}
+.main {
+    min-height: 85vh;
+    border-right: 2px solid #ff9a32;
+    border-left: 2px solid #ff9a32;
+    padding: 35px 35px 0;
+}
+.recipes a {
+    color: black;
+    padding-top: 25px;
+}
+.recipes p {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.recipes p:hover {
+    border: 1px dotted #ff9a32;
+}
+.footer {
+    background: rgb(238, 255, 0, 0.5);
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+.footer-svgs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+.footer-svgs a {
+    transition: all 0.3s;
+}
+.footer-svgs a:hover {
+    transform: scale(1.2);
+}
+// swiper
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 100%;
+}
+.swiper-wrapper {
+    display: flex;
+    min-height: 75vh;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-pagination {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.swiper-pagination-bullet {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+    color: #fff;
+    background: #007aff;
+}
+.form {
+    margin-top: 50px;
+    min-height: 85vh;
+}
+.form form {
+    text-align: center;
+}
+.form input {
+    width: 225px;
+    height: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+input:nth-child(8) {
+    margin-bottom: 100px;
+}
+.form div {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.form button {
+    color: white;
+    font-weight: 700;
+    height: 50px;
+    width: 125px;
+    border-radius: 20px;
+    background: #ff9a32;
+    border: 1px solid rgb(88, 62, 13);
+    opacity: 0.7;
+    transition: all 0.3s;
+}
+.form button:hover {
+    opacity: 1;
+    border: 1px solid #ff9a32;
+}
+
