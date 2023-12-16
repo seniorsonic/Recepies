@@ -10,7 +10,7 @@
             src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
             defer
         ></script>
-       <script src="static/js/mane.js" defer></script>
+       <script src="static/js/login.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -30,16 +30,19 @@
             </nav>
         </header>
         <section class="form container">
-            <form action="#">
+            <form action="#" id="myForm">
                 <div class="name">Введите ваше имя:</div>
-                <input type="text" placeholder="Имя">
+                <input type="text" placeholder="Имя" id="nameInput">
+                <div class="error" id="nameError"></div>
                 <div class="name">Введите вашу фамилию:</div>
-                <input type="text" placeholder="Фамилия">
+                <input type="text" placeholder="Фамилия" id="surnameInput">
+                <div class="error" id="surnameError"></div>
                 <div class="name">Введите пароль:</div>
-                <input type="text" placeholder="password">
+                <input type="text" placeholder="password" id="passwordInput">
+                <div class="error" id="passwordError"></div>
                 <div class="name">Введите вашу почту:</div>
-                <input type="email" placeholder="Email">
-                <br>
+                <input type="email" placeholder="Email" id="emailInput">
+                <div class="error" id="emailError"></div>
                 <button class="btn" type="submit">Отправить</button>
             </form>
         </section>

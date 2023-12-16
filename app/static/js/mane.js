@@ -9,13 +9,6 @@ var swiper = new Swiper(".mySwiper", {
         },
     },
 });
-const btn = document.querySelector(".btn");
-btn.addEventListener("click", () => alert("Вы успешно зарегистрировались"));
-
-document.addEventListener("submit", (e) => {
-    e.prevent.Default();
-    e.target.reset();
-});
 const slider = document.querySelector(".swiper-wrapper");
 const countRecipes = document.querySelectorAll(".swiper-slide-text");
 const countSliders = document.querySelectorAll(".swiper-slide");
