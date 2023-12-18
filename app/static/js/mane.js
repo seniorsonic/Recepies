@@ -19,3 +19,11 @@ if (countRecipes.length > 7 * countSliders.length) {
 }
 
 const currentSlider = countSliders[countSliders.length - 1]; // Доступ к последнему слайдеру
+
+
+// был бы я не дауном который в три часа ночи пишет знал бы куда засунуть, это типо один рецепт должно выводить пройто айди от 1 пиши
+const recipeId = /* ваш способ получения идентификатора рецепта */;
+
+fetch(`/get_recipe_data/${recipeId}`)
+    .then(response => response.text())
+    .catch(error => console.error('Error:', error));

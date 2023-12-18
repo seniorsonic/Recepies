@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, Response
 from app import app
 from app.login_sql import new_user
 from app.main_recipes_sql import recipe
+from app.new_recipe_sql import new_recipe
+from app.curr_login import current_login
 
 
 @app.route('/')
@@ -41,3 +43,23 @@ def contact():
 @app.route('/recipe.html')
 def recipe():
     return render_template('recipe.html')
+
+
+@app.route('/recipe.html', methods=['POST'])
+def recipe():
+    # Получаем данные из тела запроса
+    data = request.json
+
+    # Теперь переменные доступны на сервере
+    login_id = current_login.user
+    img = data.get('img')
+    txt_recipe = data.get('txt_recipe')
+
+    if new_recipe(login_id, img, txt_recipe):
+        return jsonify({'success': True})
+
+
+@app.route('/get_recipe_data/<recipe_id>')
+def get_recipe_text(recipe_id):
+    text_data = recipe(recipe_id)
+    return Response(text_data)

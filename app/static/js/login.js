@@ -10,7 +10,7 @@ function log() {
     if (emailValue) {
         validateEmail(emailValue, 'emailError');
     }
-    if (nameValue && surnameValue && passwordValue && document.getElementById('emailError') == "") {
+    if (nameValue && surnameValue && passwordValue && emailValue) {
         // Создаем объект для данных
         const data = {
           name: nameValue,

@@ -1,4 +1,5 @@
 import psycopg2
+from app.curr_login import current_login
 
 
 def new_user(firstname, secondname, password_d, email):
@@ -12,8 +13,8 @@ def new_user(firstname, secondname, password_d, email):
     )
     # Создание объекта курсора
     cur = conn.cursor()
-
-    sql = "SELECT email FROM login where email = %s;"
+    emails = email.split('@')
+    sql = "SELECT email FROM login where email = '" + emails[0] + '@' + emails[1] + "';"
     cur.execute(sql, email)
     email_good = cur.fetchone()
     if email_good is not None:
@@ -35,4 +36,6 @@ def new_user(firstname, secondname, password_d, email):
     # Закрытие курсора и соединения
     cur.close()
     conn.close()
+    current_login.user = emails[0] + '@' + emails[1]
     return True
+

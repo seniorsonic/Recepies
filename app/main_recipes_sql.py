@@ -12,14 +12,14 @@ def recipe(recipe_id):
     )
     # Создание объекта курсора
     cur = conn.cursor()
-    sql = "SELECT * FROM recipe where login_id = %s;"
-    cur.execute(sql, recipe_id)
-    recipe = cur.fetchone()
+    sql = "SELECT txt_recipe FROM recipe where login_id = %s;"
+    cur.execute(sql, str(recipe_id))
+    recipe = cur.fetchone()[0]
     # Подтверждение изменений
     conn.commit()
 
     # Закрытие курсора и соединения
     cur.close()
     conn.close()
-    return recipe[3]
+    return recipe
 
