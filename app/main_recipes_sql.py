@@ -1,7 +1,7 @@
 import psycopg2
 
 
-def recipe(recipe_id):
+def one_recipe(recipe_id):
     # Подключение к базе данных
     conn = psycopg2.connect(
         database="Recepies",
