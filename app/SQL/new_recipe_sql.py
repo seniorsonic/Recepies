@@ -32,6 +32,6 @@ def new_recipe(login_id, img, txt_recipe):
     cur.close()
     conn.close()
 
-
-for i in range(40):
-    new_recipe(1, 0, 'Kak pravilno kushat arbuz')
+#
+# for i in range(40):
+#     new_recipe(1, 0, 'Kak pravilno kushat arbuz')
