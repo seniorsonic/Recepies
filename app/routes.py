@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 from flask import render_template, request, jsonify, Response
 from app import app
-from app.login_sql import new_user
-from app.main_recipes_sql import one_recipe
-from app.new_recipe_sql import new_recipe
-from app.curr_login import current_login
+from app.SQL.login_sql import new_user
+from app.SQL.main_recipes_sql import one_recipe, last_recipe
 
 
 @app.route('/')
@@ -13,13 +11,13 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/login.html', methods=['GET'])
-def login_get():
-    return render_template('login.html')
+@app.route('/register.html', methods=['GET'])
+def register_get():
+    return render_template('register.html')
 
 
-@app.route('/login.html', methods=['POST'])
-def login_post():
+@app.route('/register.html', methods=['POST'])
+def register_post():
     # Получаем данные из тела запроса
     data = request.json
 
@@ -40,12 +38,12 @@ def contact():
     return render_template('contact.html')
 
 
-@app.route('/recipe.html', methods=['GET'])
+@app.route('/new_recipe.html', methods=['GET'])
 def recipe():
-    return render_template('recipe.html')
+    return render_template('new_recipe.html')
 
 
-# @app.route('/recipe.html', methods=['POST'])
+# @app.route('/new_recipe.html', methods=['POST'])
 # def recipe():
 #     # Получаем данные из тела запроса
 #     data = request.json
@@ -57,6 +55,12 @@ def recipe():
 #
 #     if new_recipe(login_id, img, txt_recipe):
 #         return jsonify({'success': True})
+
+
+@app.route('/get_last_recipe_data')
+def get_last_recipe_text():
+    index_data = last_recipe()
+    return Response(index_data)
 
 
 @app.route('/get_recipe_data/<recipe_id>')

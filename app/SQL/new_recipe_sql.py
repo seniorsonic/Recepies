@@ -1,4 +1,6 @@
 import psycopg2
+# img -> в ингридиенты
+# тайтл добавить
 
 
 def new_recipe(login_id, img, txt_recipe):
@@ -30,3 +32,6 @@ def new_recipe(login_id, img, txt_recipe):
     cur.close()
     conn.close()
 
+
+for i in range(40):
+    new_recipe(1, 0, 'Kak pravilno kushat arbuz')

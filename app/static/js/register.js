@@ -20,7 +20,7 @@ function log() {
         };
 
         // Отправляем POST-запрос на сервер Flask
-        fetch('/login.html', {
+        fetch('/register.html', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

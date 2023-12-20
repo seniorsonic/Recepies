@@ -39,3 +39,5 @@ def new_user(firstname, secondname, password_d, email):
     current_login.user = emails[0] + '@' + emails[1]
     return True
 
+
+# new_user('Николай', 'Кравчук', 'molodez', 'pochta@yandex.ru')
