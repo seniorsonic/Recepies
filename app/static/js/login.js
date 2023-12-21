@@ -1,20 +1,20 @@
-function Add {
-    const nameValue = document.getElementById('name-recipe').value;
-    const ingredientsValue = document.getElementById('ingredients').value;
-    const recipeValue = document.getElementById('recipe').value;
-    validateField(nameValue, 'nameError');
-    validateField(ingredientsValue, 'ingredientsError');
-    validateField(recipeValue, 'recipeError');
-    if (nameValue && ingredientsValue && recipeValue) {
+function log() {
+    const emailValue = document.getElementById('emailInput').value;
+    const passwordValue = document.getElementById('passwordInput').value;
+    validateField(emailValue, 'emailError');
+    validateField(passwordValue, 'passwordError');
+    if (emailValue) {
+        validateEmail(emailValue, 'emailError');
+    }
+    if (emailValue && passwordValue) {
         // Создаем объект для данных
         const data = {
-          name: nameValue,
-          ingredients: ingredientsValue,
-          txt_recipe: recipeValue,
+          email: emailValue,
+          password: passwordValue
         };
 
         // Отправляем POST-запрос на сервер Flask
-        fetch('/new_recipe.html', {
+        fetch('/login.html', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -24,10 +24,10 @@ function Add {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert("Вы успешно добавили рецепт");
+                    alert("Вы зашли");
                     window.location.href = '/';
                 } else {
-                    alert("Ошибка при вводе рецепта: " + data.error);
+                    alert("Ошибка при входе: " + data.error);
                 }
             })
                 .catch((error) => {
@@ -44,6 +44,14 @@ function validateField(value, errorId) {
         errorElement.textContent = "";
     }
 }
+function validateEmail(value, errorId) {
+    const errorElement = document.getElementById(errorId);
+    if (value.includes('@')) {
+        errorElement.textContent = "";
+    } else {
+        errorElement.textContent = "Введите настоящую почту";
+    }
+}
 
-const btn = document.querySelector(".btn-1");
-btn.addEventListener("click", Add);
+const btn = document.querySelector(".btn");
+btn.addEventListener("click", log);

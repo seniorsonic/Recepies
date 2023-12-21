@@ -1,19 +1,49 @@
 # -*- coding: utf-8 -*-
 from flask import render_template, request, jsonify, Response
 from app import app
-from app.SQL.login_sql import new_user
-from app.SQL.main_recipes_sql import one_recipe, last_recipe
+from app.SQL.login_sql import new_user, old_user
+from app.SQL.main_recipes_sql import one_recipe_name, last_recipe
+from app.SQL.new_recipe_sql import new_recipe
+from app.curr_login import current_login
 
 
-@app.route('/')
+@app.route('/', methods=['GET'])
 @app.route('/index.html', methods=['GET'])
-def index():
-    return render_template('index.html')
+def index_get():
+    return render_template('index.html', name_user=current_login.name_user)
+
+
+@app.route('/', methods=['POST'])
+@app.route('/index.html', methods=['POST'])
+def index_post():
+    current_login.id_user = 0
+    current_login.name_user = ''
+    current_login.email = ''
+    return jsonify({'success': True})
+
+
+@app.route('/login.html', methods=['GET'])
+def login_get():
+    return render_template('login.html', name_user=current_login.name_user)
+
+
+@app.route('/login.html', methods=['POST'])
+def login_post():
+    data = request.json
+
+    # Теперь переменные доступны на сервере
+    email = data.get('email')
+    password = data.get('password')
+
+    if old_user(email, password):
+        return jsonify({'success': True})
+    else:
+        return jsonify({'success': False, 'error': 'Не верный ввод'})
 
 
 @app.route('/register.html', methods=['GET'])
 def register_get():
-    return render_template('register.html')
+    return render_template('register.html', name_user=current_login.name_user)
 
 
 @app.route('/register.html', methods=['POST'])
@@ -35,26 +65,30 @@ def register_post():
 
 @app.route('/contact.html')
 def contact():
-    return render_template('contact.html')
+    return render_template('contact.html', name_user=current_login.name_user)
 
 
 @app.route('/new_recipe.html', methods=['GET'])
-def recipe():
-    return render_template('new_recipe.html')
+def new_recipe_get():
+    if current_login.name_user != '':
+        return render_template('new_recipe.html', name_user=current_login.name_user)
+    else:
+        return render_template("error.html")
 
 
-# @app.route('/new_recipe.html', methods=['POST'])
-# def recipe():
-#     # Получаем данные из тела запроса
-#     data = request.json
-#
-#     # Теперь переменные доступны на сервере
-#     login_id = current_login.user
-#     img = data.get('img')
-#     txt_recipe = data.get('txt_recipe')
-#
-#     if new_recipe(login_id, img, txt_recipe):
-#         return jsonify({'success': True})
+@app.route('/new_recipe.html', methods=['POST'])
+def new_recipe_post():
+    # Получаем данные из тела запроса
+    data = request.json
+
+    # Теперь переменные доступны на сервере
+    login_id = current_login.id_user
+    name_recipe = data.get('name')
+    ingredients = data.get('ingredients')
+    txt_recipe = data.get('txt_recipe')
+
+    if new_recipe(login_id, name_recipe, ingredients, txt_recipe):
+        return jsonify({'success': True})
 
 
 @app.route('/get_last_recipe_data')
@@ -65,5 +99,5 @@ def get_last_recipe_text():
 
 @app.route('/get_recipe_data/<recipe_id>')
 def get_recipe_text(recipe_id):
-    text_data = one_recipe(recipe_id)
+    text_data = one_recipe_name(recipe_id)
     return Response(text_data)

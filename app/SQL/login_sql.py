@@ -40,4 +40,37 @@ def new_user(firstname, secondname, password_d, email):
     return True
 
 
+def old_user(email, password):
+    # Подключение к базе данных
+    conn = psycopg2.connect(
+        database="Recepies",
+        user="postgres",
+        password="123",
+        host="localhost",
+        port="5432"
+    )
+    # Создание объекта курсора
+    cur = conn.cursor()
+    emails = email.split('@')
+    sql = "SELECT email, password_d, firstname, login_id FROM login where email = '" + emails[0] + '@' + emails[1] + "';"
+    cur.execute(sql, email)
+    coincidence = cur.fetchone()
+    if coincidence is None:
+        return False
+    # Подтверждение изменений
+    conn.commit()
+
+    # Закрытие курсора и соединения
+    cur.close()
+    conn.close()
+    if coincidence[1] == password:
+        current_login.email = coincidence[0]
+        current_login.id_user = coincidence[3]
+        current_login.name_user = coincidence[2]
+        return True
+    return False
+
+
+# new_user(1, 1, 1, "1@1")
 # new_user('Николай', 'Кравчук', 'molodez', 'pochta@yandex.ru')
+# old_user("pochta@yandex.ru", 'molodez')

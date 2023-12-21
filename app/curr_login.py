@@ -1,2 +1,4 @@
 class current_login:
-    user = ''
+    id_user = 0
+    name_user = ''
+    email = ''

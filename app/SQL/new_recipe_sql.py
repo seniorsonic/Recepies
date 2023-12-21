@@ -1,9 +1,7 @@
 import psycopg2
-# img -> в ингридиенты
-# тайтл добавить
 
 
-def new_recipe(login_id, img, txt_recipe):
+def new_recipe(login_id, name_recipe, ingredients, txt_recipe):
     # Подключение к базе данных
     conn = psycopg2.connect(
         database="Recepies",
@@ -19,12 +17,8 @@ def new_recipe(login_id, img, txt_recipe):
     max_recipe = cur.fetchone()
     if None in max_recipe:
         max_recipe = [0]
-    if img != 0:
-        sql = "INSERT INTO recipe (recipe_id, login_id, img, txt_recipe) VALUES (%s, %s, %s, %s);"
-        cur.execute(sql, (max_recipe[0] + 1, login_id, img, txt_recipe))
-    else:
-        sql = "INSERT INTO recipe (recipe_id, login_id, txt_recipe) VALUES (%s, %s, %s);"
-        cur.execute(sql, (max_recipe[0] + 1, login_id, txt_recipe))
+    sql = "INSERT INTO recipe (recipe_id, login_id, name_recipe, ingredients, txt_recipe) VALUES (%s, %s, %s, %s, %s);"
+    cur.execute(sql, (max_recipe[0] + 1, login_id, name_recipe, ingredients, txt_recipe))
     # Подтверждение изменений
     conn.commit()
 
@@ -32,6 +26,6 @@ def new_recipe(login_id, img, txt_recipe):
     cur.close()
     conn.close()
 
-#
+
 # for i in range(40):
-#     new_recipe(1, 0, 'Kak pravilno kushat arbuz')
+#     new_recipe(1, 'ARBUZ', 'arbuz, voda, kostochki', 'Приятного аппетита')

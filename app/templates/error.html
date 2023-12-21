@@ -11,7 +11,6 @@
             defer
         ></script>
         <script src="static/js/mane.js" defer></script>
-        <script src="static/js/current_login.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -30,35 +29,22 @@
                         >
                     </div>
                     <div class="navigation__btns">
-                        <div class="active" id="user-data" data-name="{{ name_user }}"></div>
-                        <a class="quit disable" href="./index.html">Выйти </a>
+                        <a class="navigation__login header-error" href="./login.html"
+                            >Авторизация</a
+                        >
+                        <a class="navigation__login header-error" href="./register.html"
+                            >Зарегистрироваться</a
+                        >
                     </div>
                 </div>
             </nav>
         </header>
         <main>
-            <section class="container">
-                <form action="#" class="form__recipes">
-                    <div class="form__recipes-text">
-                        <div class="name-recipe">
-                            <h1>Введите название рецепта:</h1>
-                            <textarea ></textarea>
-                            <div id="nameError"></div>
-                        </div>
-                        <div class="ingredients">
-                            <h1>Введите ингредиенты:</h1>
-                            <textarea ></textarea>
-                            <div id="ingredientsError"></div>
-                        </div>
-                        <div class="recipe">
-                            <h1>Введите рецепт:</h1>
-                            <textarea ></textarea>
-                            <div id="recipeError"></div>
-                        </div>
-                        <div></div>
-                    </div>
-                    <button class="btn-1" type="submit">Отправить</button>
-                </form>
+            <section class="container error">
+                <div>
+                    Ошибка добавления рецепта. <br /><br />
+                    Для добавленрия рецепта вы должны быть авторизованы!<br /><br />
+                </div>
             </section>
         </main>
         <footer class="footer">

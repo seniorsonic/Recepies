@@ -1,7 +1,7 @@
 import psycopg2
 
 
-def one_recipe(recipe_id):
+def one_recipe_name(recipe_id):
     # Подключение к базе данных
     conn = psycopg2.connect(
         database="Recepies",
@@ -12,7 +12,7 @@ def one_recipe(recipe_id):
     )
     # Создание объекта курсора
     cur = conn.cursor()
-    sql = "SELECT txt_recipe FROM recipe where recipe_id = %s;"
+    sql = "SELECT name_recipe FROM recipe where recipe_id = %s;"
     cur.execute(sql, (recipe_id,))
     recipe = cur.fetchone()[0]
     # Подтверждение изменений
@@ -43,6 +43,3 @@ def last_recipe():
     cur.close()
     conn.close()
     return recipe
-
-
-# one_recipe(10)
