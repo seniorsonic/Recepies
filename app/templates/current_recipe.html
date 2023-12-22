@@ -41,19 +41,16 @@
                 <form action="#" class="form__recipes">
                     <div class="form__recipes-text">
                         <div class="name-recipe">
-                            <h1>Введите название рецепта:</h1>
-                            <textarea ></textarea>
-                            <div id="nameError"></div>
+                            <h1>Название рецепта:</h1>
+                            <div class="disable" id="name-data" data-name_recipe="{{ name_recipe }}"></div>
                         </div>
                         <div class="ingredients">
-                            <h1>Введите ингредиенты:</h1>
-                            <textarea ></textarea>
-                            <div id="ingredientsError"></div>
+                            <h1>Ингредиенты:</h1>
+                            <div class="disable" id="ingredients-data" data-ingredients="{{ ingredients }}"></div>
                         </div>
                         <div class="recipe">
-                            <h1>Введите рецепт:</h1>
-                            <textarea ></textarea>
-                            <div id="recipeError"></div>
+                            <h1>Рецепт:</h1>
+                            <div class="disable" id="recipe-data" data-txt_recipe="{{ txt_recipe }}"></div>
                         </div>
                         <div></div>
                     </div>

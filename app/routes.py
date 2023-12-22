@@ -5,6 +5,7 @@ from app.SQL.login_sql import new_user, old_user
 from app.SQL.main_recipes_sql import one_recipe_name, last_recipe
 from app.SQL.new_recipe_sql import new_recipe
 from app.curr_login import current_login
+from app.SQL.current_recipe_SQL import choise_recipe
 
 
 @app.route('/', methods=['GET'])
@@ -16,6 +17,14 @@ def index_get():
 @app.route('/', methods=['POST'])
 @app.route('/index.html', methods=['POST'])
 def index_post():
+    data = request.json
+    recipe = choise_recipe(data.get('id_recipe'))
+    current_recipe(recipe)
+    return jsonify({'success': True})
+
+
+@app.route('/quit.html', methods=['POST'])
+def quit():
     current_login.id_user = 0
     current_login.name_user = ''
     current_login.email = ''
@@ -89,6 +98,12 @@ def new_recipe_post():
 
     if new_recipe(login_id, name_recipe, ingredients, txt_recipe):
         return jsonify({'success': True})
+
+
+@app.route('/current_recipe.html')
+def current_recipe(recipe):
+    return render_template("current_recipe.html", login_id=recipe[0], name_recipe=recipe[1], ingredients=recipe[2],
+                           txt_recipe=recipe[3])
 
 
 @app.route('/get_last_recipe_data')

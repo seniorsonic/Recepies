@@ -354,7 +354,8 @@ input:nth-child(11) {
 
 .navigation__btns {
     display: flex;
-    gap: 10px;
+    gap: 30px;
+    align-items:center;
 }
 .form__login {
     padding-top: 200px;
@@ -434,4 +435,26 @@ textarea{
 }
 .disable {
     display: none;
+    border: none;
+}
+.navigation__btns{
+    border: 2px solid #ff9a32;
+    padding:10px
+}
+#user-data {
+    font-size:30px;
+    border: 5px dotted #ff9a32;
+    padding:14px;
+    color:grey;
+    font-weight:700;
+    border-radius:10px;
+}
+.quit{
+    background:#ff9a32;
+    font-size:30px;
+    border: 1px solid #ff9a32;
+    padding:10px;
+    color:white;
+    font-weight:500;
+    border-radius:10px;
 }
