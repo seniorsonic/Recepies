@@ -12,6 +12,7 @@
         ></script>
         <script src="static/js/new_recipe.js" defer></script>
         <script src="static/js/current_login.js" defer></script>
+        <script src="static/js/rueng.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -25,13 +26,17 @@
                                 alt="logo"
                             />
                         </a>
-                        <a class="navigation__contant-text" href="./index.html"
+                        <a id="lang1" class="navigation__contant-text" href="./index.html"
                             >Рецепты</a
                         >
+                        <div class="rueng">
+                            <p class="langRu activeLang">Ru</p>
+                            <p class="langEng ">Eng</p>
+                        </div>
                     </div>
                     <div class="navigation__btns">
                         <div class="disable" id="user-data" data-name="{{ name_user }}"></div>
-                        <a class="quit disable" href="./index.html">Выйти </a>
+                        <a id="lang5" class="quit disable" href="./index.html">Выйти </a>
                     </div>
                 </div>
             </nav>
@@ -41,35 +46,35 @@
                 <form action="#" class="form__recipes">
                     <div class="form__recipes-text">
                         <div class="name_recipe">
-                            <h1>Введите название рецепта:</h1>
+                            <h1 id="lang18">Введите название рецепта:</h1>
                             <textarea id="name_recipe"></textarea>
                             <div id="nameError"></div>
                         </div>
                         <div class="ingredients">
-                            <h1>Введите ингредиенты:</h1>
+                            <h1 id="lang19">Введите ингредиенты:</h1>
                             <textarea id="ingredients"></textarea>
                             <div id="ingredientsError"></div>
                         </div>
                         <div class="recipe">
-                            <h1>Введите рецепт:</h1>
+                            <h1 id="lang20">Введите рецепт:</h1>
                             <textarea id="recipe"></textarea>
                             <div id="recipeError"></div>
                         </div>
                         <div></div>
                     </div>
                 </form>
-                <button class="btn-1" >Отправить</button>
+                <button id="lang21" class="btn-1" >Отправить</button>
             </section>
         </main>
         <footer class="footer">
             <div class="footer-svgs container">
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://t.me/recipe_for_site"
                     ><img src="static/img/telegram.svg" alt=""
                 /></a>
                 <a href="https://vk.com/iris_mertv"
                     ><img src="static/img/vk.svg" alt=""
                 /></a>
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://chat.whatsapp.com/FXmIYEXmVENFRDY80oXYC7"
                     ><img src="static/img/whatsapp.svg" alt=""
                 /></a>
             </div>

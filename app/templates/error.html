@@ -10,6 +10,7 @@
             src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
             defer
         ></script>
+        <script src="static/js/rueng.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -23,37 +24,37 @@
                                 alt="logo"
                             />
                         </a>
-                        <a class="navigation__contant-text" href="./index.html"
+                        <a id="lang1" class="navigation__contant-text" href="./index.html"
                             >Рецепты</a
                         >
+                        <div class="rueng">
+                            <p class="langRu activeLang">Ru</p>
+                            <p class="langEng ">Eng</p>
+                        </div>
                     </div>
                     <div class="navigation__btns">
-                        <a class="navigation__login header-error" href="./login.html"
-                            >Авторизация</a
-                        >
-                        <a class="navigation__login header-error" href="./register.html"
-                            >Зарегистрироваться</a
-                        >
+                        <a id="lang2" class="navigation__login" href="./login.html">Авторизация</a>
+                        <a id="lang3" class="navigation__login" href="./register.html">Зарегистрироваться</a>
                     </div>
                 </div>
             </nav>
         </header>
         <main>
             <section class="container error">
-                <div>
+                <div id="lang22">
                     Ошибка 404.
                 </div>
             </section>
         </main>
         <footer class="footer">
             <div class="footer-svgs container">
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://t.me/recipe_for_site"
                     ><img src="static/img/telegram.svg" alt=""
                 /></a>
                 <a href="https://vk.com/iris_mertv"
                     ><img src="static/img/vk.svg" alt=""
                 /></a>
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://chat.whatsapp.com/FXmIYEXmVENFRDY80oXYC7"
                     ><img src="static/img/whatsapp.svg" alt=""
                 /></a>
             </div>

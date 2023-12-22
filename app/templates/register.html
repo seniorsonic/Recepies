@@ -10,7 +10,8 @@
             src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
             defer
         ></script>
-       <script src="static/js/register.js" defer></script>
+        <script src="static/js/register.js" defer></script>
+        <script src="static/js/rueng.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -23,43 +24,45 @@
                             alt="logo"
                         />
                     </a>
-                    <a class="navigation__contant-text" href="./index.html"
+                    <a id="lang1" class="navigation__contant-text" href="./index.html"
                         >Рецепты</a
                     >
+                    <div class="rueng">
+                        <p class="langRu activeLang">Ru</p>
+                        <p class="langEng ">Eng</p>
+                    </div>
                 </div>
                 <div class="navigation__btns ">
-                        <a class="navigation__login navigation__login-reg" href="./login.html"
-                            >Авторизация</a
-                        >
+                        <a id="lang2" class="navigation__login" href="./login.html">Авторизация</a>
                 </div>
             </nav>
         </header>
         <section class="form container">
             <form action="#" id="myForm">
-                <div class="name">Введите ваше имя:</div>
+                <div id="lang9" class="name">Введите ваше имя:</div>
                 <input type="text" placeholder="Имя" id="nameInput">
                 <div id="nameError"></div>
-                <div class="name">Введите вашу фамилию:</div>
+                <div id="lang10" class="name">Введите вашу фамилию:</div>
                 <input type="text" placeholder="Фамилия" id="surnameInput">
                 <div id="surnameError"></div>
-                <div class="name">Введите пароль:</div>
+                <div id="lang11" class="name">Введите пароль:</div>
                 <input type="text" placeholder="password" id="passwordInput">
                 <div  id="passwordError"></div>
-                <div class="name">Введите вашу почту:</div>
+                <div id="lang12" class="name">Введите вашу почту:</div>
                 <input type="email" placeholder="Email" id="emailInput">
                 <div id="emailError"></div>
             </form>
-            <button class="btn">Отправить</button>
+            <button id="lang13" class="btn">Отправить</button>
         </section>
         <footer class="footer">
             <div class="footer-svgs container">
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://t.me/recipe_for_site"
                     ><img src="static/img/telegram.svg" alt=""
                 /></a>
                 <a href="https://vk.com/iris_mertv"
                     ><img src="static/img/vk.svg" alt=""
                 /></a>
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://chat.whatsapp.com/FXmIYEXmVENFRDY80oXYC7"
                     ><img src="static/img/whatsapp.svg" alt=""
                 /></a>
             </div>

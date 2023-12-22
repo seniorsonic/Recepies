@@ -12,6 +12,7 @@
         ></script>
         <script src="static/js/current_recipe.js" defer></script>
         <script src="static/js/current_login.js" defer></script>
+        <script src="static/js/rueng.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -25,16 +26,20 @@
                                 alt="logo"
                             />
                         </a>
-                        <a class="navigation__contant-text" href="./index.html"
+                        <a id="lang1" class="navigation__contant-text" href="./index.html"
                             >Рецепты</a
                         >
+                        <div class="rueng">
+                            <p class="langRu activeLang">Ru</p>
+                            <p class="langEng ">Eng</p>
+                        </div>
                     </div>
                     <div class="navigation__btns">
-                        <a class="navigation__login currentBtnRecipe" href="./login.html">Авторизация</a>
-                        <a class="navigation__login currentBtnRecipe" href="./register.html">Зарегистрироваться</a>
-                        <a class="navigation__login disableRecipe currentBtnRecipe" href="./new_recipe.html">Добавить рецепт</a>
+                        <a id="lang2" class="navigation__login currentBtnRecipe" href="./login.html">Авторизация</a>
+                        <a id="lang3" class="navigation__login currentBtnRecipe" href="./register.html">Зарегистрироваться</a>
+                        <a id="lang4" class="navigation__login disableRecipe currentBtnRecipe" href="./new_recipe.html">Добавить рецепт</a>
                         <div class="disable" id="user-data" data-name="{{ name_user }}"></div>
-                        <a class="quit disable" href="./index.html">Выйти </a>
+                        <a id="lang5" class="quit disable" href="./index.html">Выйти </a>
                     </div>
                 </div>
             </nav>
@@ -44,21 +49,21 @@
                 <form action="#" class="form__recipes">
                     <div class="form__recipes-text">
                         <div class="name_recipe">
-                            <h1>Название рецепта:</h1>
+                            <h1 id="lang14">Название рецепта:</h1>
                             <div id="name-data"></div>
                         </div>
                         <div class="ingredients">
-                            <h1>Ингредиенты:</h1>
+                            <h1 id="lang15">Ингредиенты:</h1>
                             <textarea id="ingredients-data" readonly></textarea>
                         </div>
                         <div class="recipe">
-                            <h1>Рецепт:</h1>
+                            <h1 id="lang16">Рецепт:</h1>
                             <textarea  id="recipe-data" readonly></textarea>
                         </div>
                         <div></div>
                     </div>
                     <div class="avtor">
-                        <h2>Автор:</h2>
+                        <h2 id="lang17">Автор:</h2>
                         <div  id="avtor-data"></div>
                     </div>
                 </form>
@@ -66,13 +71,13 @@
         </main>
         <footer class="footer">
             <div class="footer-svgs container">
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://t.me/recipe_for_site"
                     ><img src="static/img/telegram.svg" alt=""
                 /></a>
                 <a href="https://vk.com/iris_mertv"
                     ><img src="static/img/vk.svg" alt=""
                 /></a>
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://chat.whatsapp.com/FXmIYEXmVENFRDY80oXYC7"
                     ><img src="static/img/whatsapp.svg" alt=""
                 /></a>
             </div>

@@ -1,5 +1,5 @@
 import psycopg2
-from app.show_class import current_login
+from app.show_class import CurrentLogin
 
 
 def new_user(firstname, secondname, password_d, email):
@@ -36,7 +36,7 @@ def new_user(firstname, secondname, password_d, email):
     # Закрытие курсора и соединения
     cur.close()
     conn.close()
-    current_login.user = emails[0] + '@' + emails[1]
+    CurrentLogin.user = emails[0] + '@' + emails[1]
     return True
 
 
@@ -64,9 +64,9 @@ def old_user(email, password):
     cur.close()
     conn.close()
     if coincidence[1] == password:
-        current_login.email = coincidence[0]
-        current_login.id_user = coincidence[3]
-        current_login.name_user = coincidence[2]
+        CurrentLogin.email = coincidence[0]
+        CurrentLogin.id_user = coincidence[3]
+        CurrentLogin.name_user = coincidence[2]
         return True
     return False
 

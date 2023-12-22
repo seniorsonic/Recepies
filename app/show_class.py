@@ -1,8 +1,12 @@
-class current_login:
+class CurrentLogin:
     id_user = 0
     name_user = ''
     email = ''
 
 
-class current_id_recipe:
+class CurrentIdRecipe:
     id_recipe = 0
+
+
+class RuEng:
+    switch = 0

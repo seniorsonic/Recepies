@@ -11,6 +11,7 @@
             defer
         ></script>
         <script src="static/js/login.js" defer></script>
+        <script src="static/js/rueng.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -24,40 +25,42 @@
                                 alt="logo"
                             />
                         </a>
-                        <a class="navigation__contant-text" href="./index.html"
+                        <a id="lang1" class="navigation__contant-text" href="./index.html"
                             >Рецепты</a
                         >
+                        <div class="rueng">
+                            <p class="langRu activeLang">Ru</p>
+                            <p class="langEng ">Eng</p>
+                        </div>
                    </div>
                     <div class="navigation__btns">
-                        <a class="navigation__login navigation__login-reg" href="./register.html"
-                            >Зарегистрироваться</a
-                        >
+                        <a id="lang3" class="navigation__login navigation__login-reg" href="./register.html">Зарегистрироваться</a>
                     </div>
                 </div>
             </nav>
         </header>
         <section class="form form__login container">
             <form action="#">
-                <div class="name">Введите вашу почту:</div>
+                <div id="lang6" class="name">Введите вашу почту:</div>
                 <input type="email" placeholder="Email" id="emailInput"/>
                 <div id="emailError"></div>
-                <div class="name">Введите пароль:</div>
+                <div id="lang7" class="name">Введите пароль:</div>
                 <input type="password" placeholder="password" id="passwordInput"/>
                 <div  id="passwordError"></div>
                 <br />
                 <br />
             </form>
-            <button class="btn">Отправить</button>
+            <button id="lang8" class="btn">Отправить</button>
         </section>
         <footer class="footer">
             <div class="footer-svgs container">
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://t.me/recipe_for_site"
                     ><img src="static/img/telegram.svg" alt=""
                 /></a>
                 <a href="https://vk.com/iris_mertv"
                     ><img src="static/img/vk.svg" alt=""
                 /></a>
-                <a href="https://vk.com/iris_mertv"
+                <a href="https://chat.whatsapp.com/FXmIYEXmVENFRDY80oXYC7"
                     ><img src="static/img/whatsapp.svg" alt=""
                 /></a>
             </div>

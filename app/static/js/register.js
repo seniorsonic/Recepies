@@ -3,7 +3,7 @@ function log() {
     const surnameValue = document.getElementById('surnameInput').value;
     const passwordValue = document.getElementById('passwordInput').value;
     const emailValue = document.getElementById('emailInput').value;
-    validateField(nameValue, 'nameError');
+    validateField(nameValue, 'namedError');
     validateField(surnameValue, 'surnameError');
     validateField(passwordValue, 'passwordError');
     validateField(emailValue, 'emailError');

@@ -17,4 +17,3 @@ fetch('/current_recipe.html', {
     .then(data => {
         display(data);
     })
-display()
