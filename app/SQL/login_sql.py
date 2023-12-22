@@ -1,5 +1,5 @@
 import psycopg2
-from app.curr_login import current_login
+from app.show_class import current_login
 
 
 def new_user(firstname, secondname, password_d, email):

@@ -10,7 +10,7 @@ function Add {
         const data = {
           name: nameValue,
           ingredients: ingredientsValue,
-          txt_recipe: recipeValue,
+          txt_recipe: recipeValue
         };
 
         // Отправляем POST-запрос на сервер Flask

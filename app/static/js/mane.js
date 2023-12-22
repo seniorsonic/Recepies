@@ -29,6 +29,18 @@ async function addNewRecipes(first, second) {
             console.error('Error:', error);
         }
     }
+
+    const countSliderText=document.querySelectorAll(".swiper-slide-text");
+    for (let i = 0; i < countSliderText.length; i++) {
+    countSliderText[i].addEventListener("click", async (e) => {
+        try {
+            const result = await postData('/index.html', { id_recipe: i + 1 });
+            window.location.href = '/current_recipe.html';
+        } catch (error) {
+            console.error('Ошибка при отправке данных:', error);
+        }
+        });
+    }
     swiper.update();
     swiper.pagination.update();
     swiper.pagination.render();
@@ -50,6 +62,18 @@ async function fetchLastRecipeData() {
     } catch (error) {
         console.error('Error:', error);
     }
+}
+
+async function postData(url = '', data = {}) {
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    return response.json();
 }
 
 fetchLastRecipeData();
