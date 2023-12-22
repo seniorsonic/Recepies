@@ -30,9 +30,9 @@
                         >
                     </div>
                     <div class="navigation__btns">
-                        <a class="navigation__login" href="./login.html">Авторизация</a>
-                        <a class="navigation__login" href="./register.html">Зарегистрироваться</a>
-                        <a class="navigation__login disableRecipe" href="./new_recipe.html">Добавить рецепт</a>
+                        <a class="navigation__login currentBtnRecipe" href="./login.html">Авторизация</a>
+                        <a class="navigation__login currentBtnRecipe" href="./register.html">Зарегистрироваться</a>
+                        <a class="navigation__login disableRecipe currentBtnRecipe" href="./new_recipe.html">Добавить рецепт</a>
                         <div class="disable" id="user-data" data-name="{{ name_user }}"></div>
                         <a class="quit disable" href="./index.html">Выйти </a>
                     </div>
@@ -49,11 +49,11 @@
                         </div>
                         <div class="ingredients">
                             <h1>Ингредиенты:</h1>
-                            <div  id="ingredients-data"></div>
+                            <textarea id="ingredients-data" readonly></textarea>
                         </div>
                         <div class="recipe">
                             <h1>Рецепт:</h1>
-                            <div  id="recipe-data"></div>
+                            <textarea  id="recipe-data" readonly></textarea>
                         </div>
                         <div></div>
                     </div>

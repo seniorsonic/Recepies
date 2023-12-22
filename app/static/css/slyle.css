@@ -160,7 +160,7 @@ body {
     justify-content: center;
     color: white;
     font-weight: 700;
-    width: 220px;
+    width: 230px;
     height: 40px;
     border-radius: 15px;
     background: #ff9a32;
@@ -266,6 +266,16 @@ body {
     -ms-flex-align: center;
     align-items: center;
     min-width: 100%;
+    gap: 35px;
+    padding: 20px 50px;
+}
+
+.swiper-slide-text {
+    font-size: 35px;
+    background: rgba(186, 127, 31, 0.5);
+    width: 100%;
+    padding: 9px;
+    border-radius: 10px;
 }
 
 .swiper-wrapper {
@@ -390,7 +400,7 @@ input:nth-child(11) {
     border-radius: 15px;
     width: 500px;
     height: 480px;
-    margin-bottom: 90px;
+    margin-bottom: 120px;
 }
 .form__recipes-text h1 {
     margin-bottom: 10px;
@@ -401,7 +411,7 @@ input:nth-child(11) {
     font-size: 25px;
     border-radius: 20px;
     position: absolute;
-    top: 680px;
+    top: 730px;
     right: 250px;
     background: #ff9a32;
     width: 150px;
@@ -411,9 +421,12 @@ input:nth-child(11) {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 634px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .error div{
-    font-size: 30px;
+    font-size: 100px;
 }
 .header-error{
     font-size: 18px;
@@ -438,6 +451,7 @@ textarea{
     border: none;
 }
 .navigation__btns{
+border-radius:5px;
     border: 2px solid #ff9a32;
     padding:10px
 }
@@ -457,4 +471,63 @@ textarea{
     color:white;
     font-weight:500;
     border-radius:10px;
+}
+.currentBtnRecipe{
+    font-size:20px;
+}
+.mainRecipe{
+    min-height:80vh;
+}
+#name-data{
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    min-width:20vw;
+min-height:13vw;
+}
+#avtor-data{
+    background:white;
+    padding:10px;
+    border-radius:15px;
+    max-width:20vw;
+    min-width:340px;
+min-height:5vw;
+}
+#recipe-data{
+min-width:20vw;
+min-height:25vw;
+    background:white;
+    padding:10px;
+    border-radius:15px;
+}
+#ingredients-data{
+min-width:20vw;
+min-height:25vw;
+    background:white;
+    padding:10px;
+    border-radius:15px;
+}
+.avtor h2{
+font-size:30px;
+margin-bottom:10px;
+}
+.avtor {
+    position: absolute;
+    top: 450px;
+    left: 38px;
+}
+#nameError {
+    position:absolute;
+    top: 680px;
+    left: 48px;
+}
+#ingredientsError {
+    position:absolute;
+    top: 680px;
+    left: 580px;
+}
+#recipeError {
+    position:absolute;
+    top: 680px;
+    left: 1115px;
 }

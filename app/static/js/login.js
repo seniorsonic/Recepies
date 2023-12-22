@@ -24,7 +24,7 @@ function log() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert("Вы зашли");
+//                    alert("Вы зашли");
                     window.location.href = '/';
                 } else {
                     alert("Ошибка при входе: " + data.error);

@@ -30,7 +30,7 @@ function log() {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert("Вы успешно зарегистрировались");
+//                    alert("Вы успешно зарегистрировались");
                     window.location.href = '/';
                 } else {
                     alert("Ошибка при регистрации: " + data.error);

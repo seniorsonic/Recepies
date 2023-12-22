@@ -25,7 +25,7 @@ def new_recipe(login_id, name_recipe, ingredients, txt_recipe):
     # Закрытие курсора и соединения
     cur.close()
     conn.close()
+    return True
 
-
-# for i in range(40):
+# for i in range(10):
 #     new_recipe(1, 'ARBUZ', 'arbuz, voda, kostochki', 'Приятного аппетита')

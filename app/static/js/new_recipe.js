@@ -1,5 +1,5 @@
-function Add {
-    const nameValue = document.getElementById('name-recipe').value;
+function Add() {
+    const nameValue = document.getElementById('name_recipe').value;
     const ingredientsValue = document.getElementById('ingredients').value;
     const recipeValue = document.getElementById('recipe').value;
     validateField(nameValue, 'nameError');
@@ -24,10 +24,10 @@ function Add {
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert("Вы успешно добавили рецепт");
+//                    alert("Вы успешно добавили рецепт");
                     window.location.href = '/';
                 } else {
-                    alert("Ошибка при вводе рецепта: " + data.error);
+                    alert("Ошибка при вводе рецепта");
                 }
             })
                 .catch((error) => {

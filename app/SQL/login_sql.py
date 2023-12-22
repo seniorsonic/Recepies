@@ -72,5 +72,9 @@ def old_user(email, password):
 
 
 # new_user(1, 1, 1, "1@1")
-# new_user('Николай', 'Кравчук', 'molodez', 'pochta@yandex.ru')
-# old_user("pochta@yandex.ru", 'molodez')
+# new_user('Николай', 'Ченцов', 'molodez', 'senior.sonic3@yandex.ru')
+# new_user('Николай', 'Ченцов', 'molodez', 'senior.sonic@yandex.ru')
+# for i in range(5):
+#     x = str(i)
+#     new_user('Пользователь ' + x, 'Пользователь ' + x, '123', 'pochta' + x + '@' + 'yandex.ru')
+# old_user("senior.sonic@yandex.ru", 'molodez')

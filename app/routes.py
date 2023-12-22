@@ -72,11 +72,6 @@ def register_post():
         return jsonify({'success': False, 'error': 'Такая почта уже зарегистрирована'})
 
 
-@app.route('/contact.html')
-def contact():
-    return render_template('contact.html', name_user=current_login.name_user)
-
-
 @app.route('/new_recipe.html', methods=['GET'])
 def new_recipe_get():
     if current_login.name_user != '':
@@ -95,14 +90,17 @@ def new_recipe_post():
     name_recipe = data.get('name')
     ingredients = data.get('ingredients')
     txt_recipe = data.get('txt_recipe')
-
     if new_recipe(login_id, name_recipe, ingredients, txt_recipe):
         return jsonify({'success': True})
+    return jsonify({'success': False})
 
 
 @app.route('/current_recipe.html', methods=['GET'])
 def current_recipe_get():
-    return render_template("current_recipe.html", name_user=current_login.name_user)
+    if current_id_recipe.id_recipe != 0:
+        return render_template("current_recipe.html", name_user=current_login.name_user)
+    else:
+        return render_template("error.html")
 
 
 @app.route('/current_recipe.html', methods=['POST'])
