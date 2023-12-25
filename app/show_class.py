@@ -9,4 +9,4 @@ class CurrentIdRecipe:
 
 
 class RuEng:
-    switch = 0
+    switch = "ru"

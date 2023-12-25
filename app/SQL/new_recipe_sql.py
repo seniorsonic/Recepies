@@ -1,31 +1,16 @@
-import psycopg2
+from sqlalchemy.sql.expression import func
+from app.SQL.Models import Recipe
+from app import db
 
 
 def new_recipe(login_id, name_recipe, ingredients, txt_recipe):
-    # Подключение к базе данных
-    conn = psycopg2.connect(
-        database="Recepies",
-        user="postgres",
-        password="123",
-        host="localhost",
-        port="5432"
-    )
-    # Создание объекта курсора
-    cur = conn.cursor()
-    sql = "SELECT MAX(recipe_id) FROM recipe;"
-    cur.execute(sql)
-    max_recipe = cur.fetchone()
+    if login_id == 0:
+        return False
+    max_recipe = Recipe.query.with_entities(func.max(Recipe.recipe_id)).first()
     if None in max_recipe:
         max_recipe = [0]
-    sql = "INSERT INTO recipe (recipe_id, login_id, name_recipe, ingredients, txt_recipe) VALUES (%s, %s, %s, %s, %s);"
-    cur.execute(sql, (max_recipe[0] + 1, login_id, name_recipe, ingredients, txt_recipe))
-    # Подтверждение изменений
-    conn.commit()
-
-    # Закрытие курсора и соединения
-    cur.close()
-    conn.close()
+    newAd = Recipe(recipe_id=max_recipe[0]+1, login_id=login_id, name_recipe=name_recipe,
+                   ingredients=ingredients, txt_recipe=txt_recipe)
+    db.session.add(newAd)
+    db.session.commit()
     return True
-
-# for i in range(10):
-#     new_recipe(1, 'ARBUZ', 'arbuz, voda, kostochki', 'Приятного аппетита')

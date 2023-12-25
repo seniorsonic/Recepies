@@ -32,7 +32,10 @@ def quit():
 
 @app.route('/RuorEng.html', methods=['POST'])
 def RuorEng():
-    RuEng.switch = 1 - RuEng.switch
+    if RuEng.switch == "ru":
+        RuEng.switch = "en"
+    else:
+        RuEng.switch = "ru"
     return jsonify({'success': True})
 
 
